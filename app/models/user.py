@@ -14,7 +14,7 @@ class User(db.Model, UserMixin):
     hashed_password = db.Column(db.String(255), nullable=False)
 
     notebook = db.relationship("Notebook", back_populates="user", cascade="all, delete")
-    note = db.relationship("Note", back_populates="user", cascade="all, delete")
+    notes = db.relationship("Note", back_populates="user", cascade="all, delete")
     task = db.relationship("Task", back_populates="user", cascade="all, delete")
     scratchpad = db.relationship("Scratchpad", back_populates="user", cascade="all, delete")
 
