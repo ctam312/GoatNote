@@ -44,7 +44,7 @@ def upgrade():
     sa.PrimaryKeyConstraint('id')
     )
     if environment == "production":
-        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
+        op.execute(f"ALTER TABLE notebooks SET SCHEMA {SCHEMA};")
 
     op.create_table('scratchpads',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -56,7 +56,7 @@ def upgrade():
     sa.PrimaryKeyConstraint('id')
     )
     if environment == "production":
-        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
+        op.execute(f"ALTER TABLE scratchpads SET SCHEMA {SCHEMA};")
 
     op.create_table('tasks',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -71,7 +71,7 @@ def upgrade():
     sa.PrimaryKeyConstraint('id')
     )
     if environment == "production":
-        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
+        op.execute(f"ALTER TABLE tasks SET SCHEMA {SCHEMA};")
 
     op.create_table('notes',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -86,7 +86,7 @@ def upgrade():
     sa.PrimaryKeyConstraint('id')
     )
     if environment == "production":
-        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
+        op.execute(f"ALTER TABLE notes SET SCHEMA {SCHEMA};")
     
     # ### end Alembic commands ###
 
