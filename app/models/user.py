@@ -13,10 +13,10 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
 
-    notebook = db.relationship("Notebook", back_populates="user", cascade="all, delete")
+    notebooks = db.relationship("Notebook", back_populates="user", cascade="all, delete")
     notes = db.relationship("Note", back_populates="user", cascade="all, delete")
-    task = db.relationship("Task", back_populates="user", cascade="all, delete")
-    scratchpad = db.relationship("Scratchpad", back_populates="user", cascade="all, delete")
+    tasks = db.relationship("Task", back_populates="user", cascade="all, delete")
+    scratchpads = db.relationship("Scratchpad", back_populates="user", cascade="all, delete")
 
     @property
     def password(self):
