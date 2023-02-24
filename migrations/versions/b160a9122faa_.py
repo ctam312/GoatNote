@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 535fa2d3fc06
+Revision ID: b160a9122faa
 Revises: 
-Create Date: 2023-02-22 10:56:50.807510
+Create Date: 2023-02-24 12:52:46.389648
 
 """
 from alembic import op
@@ -14,7 +14,7 @@ SCHEMA = os.environ.get("SCHEMA")
 
 
 # revision identifiers, used by Alembic.
-revision = '535fa2d3fc06'
+revision = 'b160a9122faa'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -38,8 +38,8 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('user_id', sa.Integer(), nullable=False),
     sa.Column('title', sa.String(), nullable=True),
-    sa.Column('created_at', sa.TIMESTAMP(timezone=True), nullable=False),
-    sa.Column('updated_at', sa.TIMESTAMP(timezone=True), nullable=False),
+    sa.Column('created_at', sa.DateTime(timezone=True), server_default=sa.text('(CURRENT_TIMESTAMP)'), nullable=True),
+    sa.Column('updated_at', sa.DateTime(timezone=True), nullable=True),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
@@ -50,8 +50,8 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('user_id', sa.Integer(), nullable=False),
     sa.Column('content', sa.Text(), nullable=True),
-    sa.Column('created_at', sa.TIMESTAMP(timezone=True), nullable=False),
-    sa.Column('updated_at', sa.TIMESTAMP(timezone=True), nullable=False),
+    sa.Column('created_at', sa.DateTime(timezone=True), server_default=sa.text('(CURRENT_TIMESTAMP)'), nullable=True),
+    sa.Column('updated_at', sa.DateTime(timezone=True), nullable=True),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
@@ -65,8 +65,8 @@ def upgrade():
     sa.Column('description', sa.Text(), nullable=False),
     sa.Column('due_date', sa.Date(), nullable=False),
     sa.Column('completed', sa.Boolean(), nullable=False),
-    sa.Column('created_at', sa.TIMESTAMP(timezone=True), nullable=False),
-    sa.Column('updated_at', sa.TIMESTAMP(timezone=True), nullable=False),
+    sa.Column('created_at', sa.DateTime(timezone=True), server_default=sa.text('(CURRENT_TIMESTAMP)'), nullable=True),
+    sa.Column('updated_at', sa.DateTime(timezone=True), nullable=True),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
@@ -79,15 +79,15 @@ def upgrade():
     sa.Column('notebook_id', sa.Integer(), nullable=True),
     sa.Column('title', sa.String(), nullable=True),
     sa.Column('content', sa.Text(), nullable=True),
-    sa.Column('created_at', sa.TIMESTAMP(timezone=True), nullable=True),
-    sa.Column('updated_at', sa.TIMESTAMP(timezone=True), nullable=True),
+    sa.Column('created_at', sa.DateTime(timezone=True), server_default=sa.text('(CURRENT_TIMESTAMP)'), nullable=True),
+    sa.Column('updated_at', sa.DateTime(timezone=True), nullable=True),
     sa.ForeignKeyConstraint(['notebook_id'], ['notebooks.id'], ),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
     if environment == "production":
         op.execute(f"ALTER TABLE notes SET SCHEMA {SCHEMA};")
-    
+
     # ### end Alembic commands ###
 
 
