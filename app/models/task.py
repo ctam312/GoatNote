@@ -1,5 +1,6 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
-
+from sqlalchemy import DateTime
+from sqlalchemy.sql import func
 class Task(db.Model):
     __tablename__ = "tasks"
 
@@ -12,8 +13,8 @@ class Task(db.Model):
     description = db.Column(db.Text, nullable=False)
     due_date = db.Column(db.Date, nullable=False)
     completed = db.Column(db.Boolean, nullable=False, default=False)
-    created_at = db.Column(db.TIMESTAMP(timezone=True), nullable=False)
-    updated_at = db.Column(db.TIMESTAMP(timezone=True), nullable=False)
+    created_at = db.Column(DateTime(timezone=True), server_default=func.now())
+    updated_at = db.Column(DateTime(timezone=True), onupdate=func.now())
 
     user = db.relationship("User", back_populates="tasks")
 
