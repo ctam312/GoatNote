@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { signUp } from "../../store/session";
 import './SignupForm.css';
+import logo from "../LoginFormPage/Goatnote.png"
 
 function SignupFormPage() {
   const dispatch = useDispatch();
@@ -29,48 +30,62 @@ function SignupFormPage() {
 
   return (
     <div className="signup-form-page">
-      <h1>Sign Up</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="signup-form">
+      <div className="evernote-logo-container">
+        <img
+          src={logo}
+          alt="Evernote Logo"
+          className="evernote-logo"
+          />
+      </div>
+          <p>Remember everything important.</p>
         <ul>
           {errors.map((error, idx) => <li key={idx}>{error}</li>)}
         </ul>
         <label>
-          Email
           <input
             type="text"
+            placeholder="Enter an Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            className="signup-inputs"
           />
         </label>
         <label>
-          Username
           <input
             type="text"
             value={username}
+            placeholder="Enter a Username"
             onChange={(e) => setUsername(e.target.value)}
             required
+            className="signup-inputs"
           />
         </label>
         <label>
-          Password
           <input
             type="password"
             value={password}
+            placeholder="Enter a Password"
             onChange={(e) => setPassword(e.target.value)}
             required
+            className="signup-inputs"
           />
         </label>
         <label>
-          Confirm Password
           <input
             type="password"
             value={confirmPassword}
+            placeholder="Confirm Password"
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
+            className="signup-inputs"
           />
         </label>
         <button type="submit">Sign Up</button>
+        <div className="extra-links-container">
+          <a href="/login" className="forgot-password-link">Already have an account?</a>
+        </div>
       </form>
     </div>
   );

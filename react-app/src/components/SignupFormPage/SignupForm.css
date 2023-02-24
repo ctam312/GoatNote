@@ -1,0 +1,53 @@
+.signup-form-page {
+	background-image: url("../LoginFormPage/background.png");
+	background-repeat: repeat;
+	background-size: 250px 250px;
+	background-color: #00000000;
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: #eeeeee;
+}
+
+.signup-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 40px;
+	background-color: #ffffff;
+	border-radius: 5px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    height: 700px;
+}
+/* 
+.password-input {
+    width: 300px;
+    height: 50px;
+} */
+
+.signup-form button[type="submit"] {
+    width: 300px;
+	margin-top: 24px;
+	padding: 12px 16px;
+	font-size: 16px;
+	color: #fff;
+	background-color: #00a82d;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.signup-form button[type="submit"]:hover {
+	background-color: #00c838;
+}
+
+.signup-inputs{
+    width: 300px;
+    height: 50px;
+    outline-color: #00a82d;
+    margin-bottom: 16px
+}

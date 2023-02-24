@@ -65,7 +65,7 @@ export default function SplashLanding() {
 			</div>
 
 			<footer className="splashpage-footer">
-				<div className="dev-footer">Evernote clone by Christian Tam</div>
+				<div className="dev-footer">An Evernote clone by Christian A. Tam</div>
 				<div className="links-footer">
 					<a
 						className="social"
