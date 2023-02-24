@@ -19,7 +19,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <>
+    <div className={`app-root${authenticated ? " with-nav" : ""}`}>
       {authenticated && <Navigation isLoaded={isLoaded} />}
       {isLoaded && (
         <Switch>
@@ -41,9 +41,8 @@ function App() {
           <Redirect to="/" />
         </Switch>
       )}
-    </>
+    </div>
   );
 }
 
 export default App;
-

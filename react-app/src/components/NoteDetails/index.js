@@ -54,7 +54,7 @@ function NoteDetails() {
 			<OpenModalButton
 				className="delete-spot"
 				modalComponent={<DeletePlantModal />}
-				buttonText="Delete Plant"
+				buttonText="Delete Note"
 			/>
 		</div>
 	);
