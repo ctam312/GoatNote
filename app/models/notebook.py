@@ -8,7 +8,7 @@ class Notebook(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")), nullable=False)
-    title = db.Column(db.String, nullable=False)
+    title = db.Column(db.String, nullable=True)
     created_at = db.Column(db.TIMESTAMP(timezone=True), nullable=False)
     updated_at = db.Column(db.TIMESTAMP(timezone=True), nullable=False)
 

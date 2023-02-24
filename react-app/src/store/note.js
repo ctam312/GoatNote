@@ -44,7 +44,6 @@ export const getAllNotesThunk = () => async (dispatch) => {
 
 export const getNoteDetailsThunk = (noteId) => async (dispatch) => {
     const res = await fetch(`/api/notes/${noteId}`);
-    console.log("NOTE ID ---->", noteId)
 	if (res.ok) {
 		const note = await res.json();
 		dispatch(loadNote(note));
@@ -54,13 +53,15 @@ export const getNoteDetailsThunk = (noteId) => async (dispatch) => {
 };
 
 export const createNoteThunk = (note) => async (dispatch) => {
-	const res = await fetch("/api/notes/", {
-		method: "POST",
+    const res = await fetch("/api/notes/", {
+        method: "POST",
 		headers: { "Content-Type": "application/json" },
 		body: JSON.stringify(note),
 	});
+    console.log("THIS THE RES --->", res)
 	if (res.ok) {
 		const newNote = await res.json();
+        console.log(newNote)
 		dispatch(createNote(newNote));
 		return newNote;
 	}
