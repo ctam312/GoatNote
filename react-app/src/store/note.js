@@ -68,11 +68,11 @@ export const createNoteThunk = (note) => async (dispatch) => {
 	return res;
 };
 
-export const editNoteThunk = (noteId, title, content, notebook_id) => async (dispatch) => {
+export const editNoteThunk = (noteId, note) => async (dispatch) => {
     const res = await fetch(`/api/notes/${noteId}`, {
         method: "PUT",
 		headers: { "Content-Type": "application/json" },
-		body: JSON.stringify({content, title, notebook_id}),
+		body: JSON.stringify(note),
 	});
 	if (res.ok) {
 		const editedNote = await res.json();

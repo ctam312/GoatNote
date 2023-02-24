@@ -23,15 +23,27 @@ function NoteDetails() {
 
 	const handleTitleChange = (event) => {
 		setTitle(event.target.value);
+		let note = {}
+		if (note.notebook_id){
+			note = {content, title: event.target.value, notebook_id:note.notebook_id}
+		} else {
+			note = {content, title: event.target.value}
+		}
 		dispatch(
-			editNoteThunk(noteId, event.target.value, content, note.notebook_id)
+			editNoteThunk(noteId, note)
 		);
 	};
 
 	const handleContentChange = (event) => {
 		setContent(event.target.value);
+		let note = {}
+		if (note.notebook_id){
+			note = {content: event.target.value, title, notebook_id:note.notebook_id}
+		} else {
+			note = {content: event.target.value, title}
+		}
 		dispatch(
-			editNoteThunk(noteId, title, event.target.value, note.notebook_id)
+			editNoteThunk(noteId, note)
 		);
 	};
 

@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, TextAreaField, HiddenField, IntegerField
-from wtforms.validators import DataRequired, Length, Optional
+from wtforms import StringField, TextAreaField, IntegerField
+from wtforms.validators import Length, Optional
 
 class NoteForm(FlaskForm):
     title = StringField('Title', validators=[Length(max=50)])
