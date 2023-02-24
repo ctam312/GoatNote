@@ -1,0 +1,184 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: Montserrat, sans-serif;
+}
+
+.splashpage-container {
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.splashpage-nav {
+	display: flex;
+	justify-content: space-between;
+	position: sticky;
+	top: 0;
+	width: 100%;
+	margin-top: 2%;
+
+	z-index: 1;
+	height: 60px;
+	background-color: #fff;
+}
+
+.splashpagenav-header {
+	display: flex;
+	align-items: center;
+	font-size: 15px;
+	padding: 3px;
+}
+
+.splashpage-login {
+	display: flex;
+	align-self: center;
+}
+
+.splashpage-top {
+	color: #000;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
+
+.splashpage-top h1 {
+	font-size: calc(24px + 2vw);
+	font-weight: 900;
+	letter-spacing: 1.5px;
+    align-self: center;
+    text-align: center;
+    width: 80%;
+}
+
+.splashpage-top h2 {
+	font-size: calc(16px + 1vw);
+	font-weight: 350;
+	line-height: 40px;
+	padding-bottom: 30px;
+	text-align: center;
+    width: 80%;
+}
+
+.splashpage-top > p {
+	font-size: calc(12px + 0.5vw);
+	text-decoration: underline;
+	color: #000;
+	margin-bottom: 2%;
+}
+
+.splashpage-top > p:hover {
+	color: #06a72e;
+}
+
+.splashpage-body {
+	display: flex;
+	justify-content: center;
+	padding: 0 5%;
+	margin-top: 5%;
+}
+
+.splashpage-four {
+	color: #000;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	width: 300px;
+	text-align: left;
+}
+
+.splashpage-item {
+	color: #000;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	gap: 10px;
+	max-width: 100%;
+}
+
+.splashpage-item .title {
+	font-size: calc(10px + 1vw);
+	font-weight: 900;
+	letter-spacing: 1.5px;
+}
+
+.splashpage-item .desc {
+	font-size: calc(6px + 0.5vw);
+	font-weight: 350;
+}
+
+.splashpage-sign-up {
+	background-color: #06a72e;
+	color: #fff;
+	border: none;
+	padding: 10px 58px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: calc(8px + 0.5vw);
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 4px;
+	width: 100%;
+	max-width: 360px;
+	height: 40px;
+	letter-spacing: 1.5px;
+}
+
+.splashpage-sign-up:hover {
+	background-color: #07cd39;
+    transition: .3s background ease-out;
+}
+
+#splashpage-img {
+    width: 100%;
+}
+
+#splashpagelogo {
+	width: 50%;
+}
+
+.splashpage-login {
+	font-family: Montserrat, sans-serif;
+	border: 2px solid #06a72e;
+	border-radius: 3px;
+	color: #06a72e;
+	display: inline-block;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.splashpage-login:hover {
+    color: #06d33c;
+    border-color: #06d33c;
+    transition: .3s background ease-out, .3s border-color ease-in-out, .3s color ease-in-out;
+}
+
+.splashpage-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    height: 80px;
+    font-size: 20px;
+    color: #999;
+}
+
+.splashpage-footer .social{
+    padding: 10px;
+    font-size: 1em;
+    color: black;
+}
+
+.dev-footer{
+    padding: 20px;
+}

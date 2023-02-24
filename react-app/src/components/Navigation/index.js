@@ -1,8 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import ProfileButton from './ProfileButton';
+import LogoutButton from './LogoutButton';
 import './Navigation.css';
+import CreateNoteButton from '../CreateNote';
 
 function Navigation({ isLoaded }){
 	const sessionUser = useSelector(state => state.session.user);
@@ -12,9 +13,12 @@ function Navigation({ isLoaded }){
 			<li>
 				<NavLink exact to="/">Home</NavLink>
 			</li>
+			<li>
+				<CreateNoteButton />
+			</li>
 			{isLoaded && (
 				<li>
-					<ProfileButton user={sessionUser} />
+					<LogoutButton user={sessionUser} />
 				</li>
 			)}
 		</ul>

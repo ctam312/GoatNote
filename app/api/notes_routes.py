@@ -40,7 +40,6 @@ def create_note():
             title=form.title.data,
             content=form.content.data,
             user_id=current_user.id,
-            notebook_id=form.notebook_id.data
         )
         db.session.add(note)
         db.session.commit()
