@@ -59,6 +59,16 @@ function LoginFormPage() {
           />
         </label>
         <button type="submit" className="login-button">Sign In</button>
+        <button
+            className="login-button"
+            type="submit"
+            onClick={() => {
+              setEmail("demo@aa.io");
+              setPassword("password");
+            }}
+          >
+            <span>Demo User</span>
+        </button>
         <div className="extra-links-container">
           <a href="/signup" className="forgot-password-link">Don't have an account?</a>
         </div>
