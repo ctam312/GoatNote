@@ -9,19 +9,22 @@ function Navigation({ isLoaded }){
 	const sessionUser = useSelector(state => state.session.user);
 
 	return (
-		<ul>
-			<li>
+		<div className='sidebar-container'>
+			<div className='sidebar-home'>
 				<NavLink exact to="/">Home</NavLink>
-			</li>
-			<li>
+			</div>
+			<div className='sidebar-create'>
 				<CreateNoteButton />
-			</li>
+			</div>
+			<div className='sidebar-notebooks'>
+				Notebooks*
+			</div>
 			{isLoaded && (
-				<li>
+				<div className='sidebar-logout'>
 					<LogoutButton user={sessionUser} />
-				</li>
+				</div>
 			)}
-		</ul>
+		</div>
 	);
 }
 

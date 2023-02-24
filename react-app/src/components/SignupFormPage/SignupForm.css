@@ -9,6 +9,8 @@
 	align-items: center;
 	height: 100vh;
 	background-color: #eeeeee;
+	width: 1888px;
+	max-height: fit-content;
 }
 
 .signup-form {
