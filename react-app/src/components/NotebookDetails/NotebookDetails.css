@@ -1,0 +1,12 @@
+.notebook-details-notes{
+    padding: 10px;
+}
+
+.notebook-details-note:hover {
+    cursor: pointer;
+}
+
+.notebook-details-note{
+    padding: 10px;
+    border: solid black 1px;
+}

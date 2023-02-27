@@ -1,0 +1,10 @@
+.full-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.note-part {
+	margin: 10px;
+}
