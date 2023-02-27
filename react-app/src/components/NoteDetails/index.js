@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import OpenModalButton from "../OpenModalButton";
 import DeletePlantModal from "../DeleteNote";
 import { getNotebooksThunk } from "../../store/notebook";
+import './NoteDetails.css'
 
 function NoteDetails() {
 	const { noteId } = useParams();
@@ -58,17 +59,25 @@ function NoteDetails() {
 	};
 
 	return (
-		<div>
+		<div className="full-container">
+				Title:
+			<div className="note-part">
 			<input
 				value={title}
 				onChange={handleTitleChange}
 				placeholder="New Note"
 			/>
+			</div>
+			Content:
+			<div className="note-part">
 			<textarea
 				value={content}
 				onChange={handleContentChange}
 				placeholder="Click to Type"
 			/>
+			</div>
+			Choose Which Notebook to place in:
+			<div className="note-part">
 			<select value={notebook_id} onChange={handleNotebookChange}>
 				{Object.values(notebooks).map((notebook) => (
 					<option key={notebook.id} value={notebook.id}>
@@ -76,6 +85,7 @@ function NoteDetails() {
 					</option>
 				))}
 			</select>
+			</div>
 			<OpenModalButton
 				className="delete-spot"
 				modalComponent={<DeletePlantModal />}
