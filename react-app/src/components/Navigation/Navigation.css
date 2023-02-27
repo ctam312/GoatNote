@@ -28,7 +28,7 @@
 
 .sidebar-home a,
 .sidebar-create button,
-.sidebar-notebooks,
+.sidebar-notebooks a,
 .sidebar-logout button {
   display: block;
   width: 100%;
@@ -44,7 +44,7 @@
 
 .sidebar-home a:hover,
 .sidebar-create button:hover,
-.sidebar-notebooks:hover,
+.sidebar-notebooks a:hover,
 .sidebar-logout button:hover {
   color: #0077ff;
 }
