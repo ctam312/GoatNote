@@ -28,7 +28,7 @@ const NoteList = () => {
 						Created on: {new Date(note.created_at).toLocaleDateString()}
 						</div>
 						<div className="notes-info">
-							Last Updated: {new Date(note.updated_at).toLocaleDateString()}
+						Last Updated: {note.updated_at ? new Date(note.updated_at).toLocaleDateString() : new Date(note.created_at).toLocaleDateString()}
 						</div>
 					</div>
 				))}
