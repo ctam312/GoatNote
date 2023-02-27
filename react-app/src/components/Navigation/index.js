@@ -17,7 +17,7 @@ function Navigation({ isLoaded }){
 				<CreateNoteButton />
 			</div>
 			<div className='sidebar-notebooks'>
-				Notebooks*
+				<NavLink exact to="/notebooks">Notebooks</NavLink>
 			</div>
 			{isLoaded && (
 				<div className='sidebar-logout'>

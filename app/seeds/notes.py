@@ -7,40 +7,48 @@ def seed_notes():
     note1 = Note(
     user_id=1,
     notebook_id=1,
-    title='First Note',
-    content='This is my first note.',
+    title='Demo First Note',
+    content='Demo This is my first note.',
     created_at=datetime.utcnow(),
     updated_at=datetime.utcnow()
     )
     note2 = Note(
-    user_id=2,
-    notebook_id=1,
-    title='Second Note',
-    content='This is my second note.',
+    user_id=1,
+    notebook_id=2,
+    title='Demo Second Note',
+    content='Demo This is my second note.',
     created_at=datetime.utcnow(),
     updated_at=datetime.utcnow()
     )
     note3 = Note(
-    user_id=1,
-    notebook_id=2,
-    title='Third Note',
+    user_id=2,
+    notebook_id=3,
+    title='User 2 Third Note',
     content='This is my third note.',
     created_at=datetime.utcnow(),
     updated_at=datetime.utcnow()
     )
     note4 = Note(
     user_id=2,
-    notebook_id=2,
-    title='Fourth Note',
+    notebook_id=4,
+    title='User 2 Fourth Note',
     content='This is my fourth note.',
     created_at=datetime.utcnow(),
     updated_at=datetime.utcnow()
     )
     note5 = Note(
     user_id=3,
-    notebook_id=3,
-    title='Fifth Note',
+    notebook_id=5,
+    title='User 3 Fifth Note',
     content='This is my fifth note.',
+    created_at=datetime.utcnow(),
+    updated_at=datetime.utcnow()
+    )
+    note6 = Note(
+    user_id=3,
+    notebook_id=5,
+    title='User 3 Fifth Note',
+    content='User 3 This is my fifth note.',
     created_at=datetime.utcnow(),
     updated_at=datetime.utcnow()
     )
@@ -51,6 +59,7 @@ def seed_notes():
     db.session.add(note3)
     db.session.add(note4)
     db.session.add(note5)
+    db.session.add(note6)
     db.session.commit()
 
 

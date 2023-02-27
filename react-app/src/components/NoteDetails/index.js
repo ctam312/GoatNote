@@ -11,6 +11,7 @@ function NoteDetails() {
 	const note = useSelector((state) => state.notes.singleNote);
 	const [title, setTitle] = useState("");
 	const [content, setContent] = useState("");
+	const [notebook_id, setNotebook_id] = useState("");
 
 	useEffect(() => {
 		dispatch(getNoteDetailsThunk(noteId));
@@ -19,6 +20,7 @@ function NoteDetails() {
 	useEffect(() => {
 		setTitle(note?.title || "");
 		setContent(note?.content || "");
+		setNotebook_id(note?.notebook_id || "")
 	}, [note]);
 
 	const handleTitleChange = (event) => {
@@ -27,7 +29,7 @@ function NoteDetails() {
 		if (note.notebook_id){
 			note = {content, title: event.target.value, notebook_id:note.notebook_id}
 		} else {
-			note = {content, title: event.target.value}
+			note = {content, title: event.target.value, notebook_id}
 		}
 		dispatch(
 			editNoteThunk(noteId, note)
@@ -40,10 +42,23 @@ function NoteDetails() {
 		if (note.notebook_id){
 			note = {content: event.target.value, title, notebook_id:note.notebook_id}
 		} else {
-			note = {content: event.target.value, title}
+			note = {content: event.target.value, title, notebook_id}
 		}
 		dispatch(
 			editNoteThunk(noteId, note)
+		);
+	};
+
+	const handleNotebookChange = (event) => {
+		setNotebook_id(event.target.value);
+		let note = {}
+		if (note.notebook_id){
+			note = {content, title, notebook_id:event.target.value}
+		} else {
+			note = {content, title, notebook_id:event.target.value}
+		}
+		dispatch(
+			editNoteThunk(noteId, note, notebook_id)
 		);
 	};
 
@@ -51,6 +66,7 @@ function NoteDetails() {
 		<div>
 			<input value={title} onChange={handleTitleChange} placeholder="New Note" />
 			<textarea value={content} onChange={handleContentChange} placeholder="Click to Type" />
+			<input value={notebook_id} onChange={handleNotebookChange}/>
 			<OpenModalButton
 				className="delete-spot"
 				modalComponent={<DeletePlantModal />}
