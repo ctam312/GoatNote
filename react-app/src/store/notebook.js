@@ -67,6 +67,7 @@ export const createNotebookThunk = (notebook) => async (dispatch) => {
 };
 
 export const updateNotebookThunk = (notebook) => async (dispatch) => {
+    console.log(notebook)
 	const res = await fetch(`/api/notebooks/${notebook.id}`, {
 		method: "PUT",
 		headers: { "Content-Type": "application/json" },
@@ -124,6 +125,7 @@ export default function notebookReducer(state = initialState, action) {
 		case UPDATE_NOTEBOOK: {
 			const newState = { ...state, singleNotebook: {} };
 			newState.allNotebooks[action.payload.id] = action.payload;
+            console.log(newState)
 			return newState;
 		}
 
