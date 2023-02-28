@@ -44,12 +44,13 @@ function SignupFormPage() {
         </ul>
         <label>
           <input
-            type="text"
+            type="email"
             placeholder="Enter an Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
             className="signup-inputs"
+            maxLength="50"
           />
         </label>
         <label>
@@ -60,6 +61,8 @@ function SignupFormPage() {
             onChange={(e) => setUsername(e.target.value)}
             required
             className="signup-inputs"
+            maxLength="20"
+            minLength="5"
           />
         </label>
         <label>
@@ -69,6 +72,8 @@ function SignupFormPage() {
             placeholder="Enter a Password"
             onChange={(e) => setPassword(e.target.value)}
             required
+            maxLength="20"
+            minLength="5"
             className="signup-inputs"
           />
         </label>
@@ -79,6 +84,8 @@ function SignupFormPage() {
             placeholder="Confirm Password"
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
+            maxLength="20"
+            minLength="5"
             className="signup-inputs"
           />
         </label>

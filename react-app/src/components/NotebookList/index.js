@@ -17,7 +17,9 @@ const NotebookList = () => {
 	const [newTitle, setNewTitle] = useState("");
 
 	const handleEdit = (notebookId) => {
+		const notebook = Object.values(notebooks).find((n) => n.id === notebookId);
 		setEditId(notebookId);
+		setNewTitle(notebook.title);
 	};
 
 	const handleSubmit = (notebookId, newTitle) => {
@@ -57,6 +59,7 @@ const NotebookList = () => {
 											type="text"
 											value={newTitle}
 											onChange={(e) => setNewTitle(e.target.value)}
+											required
 										/>
 										<button type="submit">Submit</button>
 									</form>
