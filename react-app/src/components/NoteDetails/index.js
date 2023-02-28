@@ -6,7 +6,6 @@ import OpenModalButton from "../OpenModalButton";
 import DeletePlantModal from "../DeleteNote";
 import { getNotebooksThunk } from "../../store/notebook";
 import "./NoteDetails.css";
-import { throttle } from "lodash";
 
 function NoteDetails() {
 	const { noteId } = useParams();
@@ -29,36 +28,35 @@ function NoteDetails() {
 		setNotebook_id(note?.notebook_id || "");
 	}, [note]);
 
-	// Define throttled versions of the event handlers using Lodash's throttle function
-	const handleTitleChangeThrottled = throttle((value) => {
-		setTitle(value);
+	const handleTitleChange = (event) => {
+		setTitle(event.target.value);
 		const note = {
 			content,
-			title: value,
+			title: event.target.value,
 			notebook_id,
 		};
 		dispatch(editNoteThunk(noteId, note));
-	}, 500);
+	};
 
-	const handleContentChangeThrottled = throttle((value) => {
-		setContent(value);
+	const handleContentChange = (event) => {
+		setContent(event.target.value);
 		const note = {
-			content: value,
+			content: event.target.value,
 			title,
 			notebook_id,
 		};
 		dispatch(editNoteThunk(noteId, note));
-	}, 500);
+	};
 
-	const handleNotebookChangeThrottled = throttle((value) => {
-		setNotebook_id(value);
+	const handleNotebookChange = (event) => {
+		setNotebook_id(event.target.value);
 		const note = {
 			content,
 			title,
-			notebook_id: value,
+			notebook_id: event.target.value,
 		};
 		dispatch(editNoteThunk(noteId, note));
-	}, 500);
+	};
 
 	return (
 		<div className="full-container">
@@ -66,7 +64,7 @@ function NoteDetails() {
 			<div className="note-part">
 				<input
 					value={title}
-					onChange={(e) => handleTitleChangeThrottled(e.target.value)}
+					onChange={handleTitleChange}
 					placeholder="New Note"
 				/>
 			</div>
@@ -74,16 +72,13 @@ function NoteDetails() {
 			<div className="note-part">
 				<textarea
 					value={content}
-					onChange={(e) => handleContentChangeThrottled(e.target.value)}
+					onChange={handleContentChange}
 					placeholder="Click to Type"
 				/>
 			</div>
 			Choose Which Notebook to place in:
 			<div className="note-part">
-				<select
-					value={notebook_id}
-					onChange={(e) => handleNotebookChangeThrottled(e.target.value)}
-				>
+				<select value={notebook_id} onChange={handleNotebookChange}>
 					{Object.values(notebooks).map((notebook) => (
 						<option key={notebook.id} value={notebook.id}>
 							{notebook.title}
