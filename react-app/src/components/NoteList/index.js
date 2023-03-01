@@ -8,6 +8,7 @@ import "./NoteList.css"
 const NoteList = () => {
 	const dispatch = useDispatch();
 	const allNotes = useSelector((state) => state.notes.allNotes);
+	const user = useSelector((state) => state.session.user)
 	const history = useHistory();
     console.log("checkout all these NOTES -->", allNotes)
 
@@ -16,8 +17,10 @@ const NoteList = () => {
 	}, [dispatch]);
 
 	return (
+		<div className="peer-review-div">
 		<div className="notes-component">
-			<h1>Notes</h1>
+		<h1 className="welcome-header-top">Welcome back, <span className="underlined-name">{user?.username}</span>!</h1>
+			<h2>📃 Notes:</h2>
 			<div className="allnotes-container">
 				{Object.values(allNotes).map((note) => (
 					<div className="note-detail-container" key={note.id} onClick={() => history.push(`/notes/${note.id}`)}>
@@ -33,6 +36,7 @@ const NoteList = () => {
 					</div>
 				))}
 			</div>
+		</div>
 		</div>
 	);
 };

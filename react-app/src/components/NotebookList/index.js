@@ -30,7 +30,7 @@ const NotebookList = () => {
 
 	return (
 		<div>
-			<h1>Notebooks</h1>
+			<h1>📓 Notebooks</h1>
             <OpenModalButton
 				className="delete-spot"
 				modalComponent={<CreateNotebookModal />}

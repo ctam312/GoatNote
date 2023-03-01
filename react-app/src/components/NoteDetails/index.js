@@ -66,6 +66,9 @@ function NoteDetails() {
 					value={title}
 					onChange={handleTitleChange}
 					placeholder="New Note"
+					maxLength="20"
+					minLength="1"
+					required
 				/>
 			</div>
 			Content:
@@ -76,9 +79,10 @@ function NoteDetails() {
 					placeholder="Click to Type"
 				/>
 			</div>
-			Choose Which Notebook to place in:
+			Add to Notebook:
 			<div className="note-part">
 				<select value={notebook_id} onChange={handleNotebookChange}>
+					<option value={0}>No Notebook</option>
 					{Object.values(notebooks).map((notebook) => (
 						<option key={notebook.id} value={notebook.id}>
 							{notebook.title}
