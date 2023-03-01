@@ -6,10 +6,20 @@
   display: none;
 }
 
+.sidebar-logo{
+  padding-top: 25px;
+  padding-bottom: 8vh;
+}
+
+#homegoatlogo{
+  max-width: 100px;
+}
+
+
 .sidebar-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   width: 200px;
   height: 100vh;

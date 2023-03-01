@@ -36,18 +36,18 @@ function CreateNotebookModal() {
 	};
 
 	return (
-		<div className="add-plant-container">
-
-			<div className="close-modal">
+		<div>
+			<div className="x-button">
 				<span style={{cursor:"pointer"}} onClick={closeModal}>
 					<i className = "fa-solid fa-xmark" />
 				</span>
 			</div>
+			<div className="delete-pop-up">
+
 
 			<div className="add-spot-header">
 				<h1>Create a Notebook</h1>
 			</div>
-
 			<div className="add-spot-errors">
 				<ul className="errors-map">
 					{errors.map((error, idx) => (
@@ -55,30 +55,38 @@ function CreateNotebookModal() {
 					))}
 				</ul>
 			</div>
-
 			<form className="add-plant-form" onSubmit={handleSubmit}>
-				<div>
+				<div className="notebook-create-wrap">
 					<div className="label-tag-container">
 						<label className="add-spot-form-label">
-							Title:
 							<input
 							className = "add-spot-form-input"
 								type="text"
 								value={title}
 								onChange={(e) => setTitle(e.target.value)}
-								maxLength="50"
 								required
+								placeholder='Enter Title Here'
+								onBlur={(e) => {
+									if (e.target.value.length > 20) {
+										alert("Title should be no more than 20 characters");
+									}
+								}}
 							/>
 						</label>
 					</div>
 
                     <div className = "submitBtn">
-					<button className="log-in-demo-button" type="submit">
-						Create Notebook
+					<button type="submit" class="ctam">
+						<span>Create</span>
+						<svg viewBox="0 0 13 10" height="10px" width="15px">
+							<path d="M1,5 L11,5"></path>
+							<polyline points="8 1 12 5 8 9"></polyline>
+						</svg>
 					</button>
                     </div>
 				</div>
 			</form>
+			</div>
 		</div>
 	);
 }

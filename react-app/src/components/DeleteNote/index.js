@@ -37,8 +37,13 @@ const DeletePlantModal = () => {
 				<h2>Delete this note?</h2>
 				<p>(This is permanent and cannot be undone.)</p>
 				<form onSubmit={handleSubmit}>
-					<button type="submit">Confirm Delete</button>
-                    {/* check plantsy button design */}
+					<button type="submit" class="cta">
+						<span>Confirm Delete</span>
+						<svg viewBox="0 0 13 10" height="10px" width="15px">
+							<path d="M1,5 L11,5"></path>
+							<polyline points="8 1 12 5 8 9"></polyline>
+						</svg>
+					</button>
 				</form>
 			</div>
 		</div>
