@@ -1,6 +1,19 @@
-.notes-component{
-    width: 50%;
+.peer-review-div{
     background-color: #c6c6c6;
+    height: 100vh;
+    width: 100vw;
+}
+
+.welcome-header-top{
+    size: 200px;
+}
+
+.notes-component{
+    padding-left: 25px;
+    width: 80vw;
+    height: 100vh;
+    background-color: #858585;
+    overflow-y: scroll
 }
 
 
@@ -9,32 +22,35 @@
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	gap: 8px;
 	margin-top: 20px;
+    width: 100%;
+    overflow-y: scroll;
 }
 
 .note-detail-container {
 	border: 1px solid #ccc;
-	border-radius: 5px;
+    color: black;
+	border-radius: 20px;
 	padding: 10px;
-	background-color: #77c881;
-    width: 50%;
-    height: 150px; /* Add a fixed height to prevent content from wrapping */
+	background-color: #48b054;
+    width: 220px;
+    height: 100px; /* Add a fixed height to prevent content from wrapping */
     overflow: hidden; /* Hide any overflowing content */
+    
 }
 
-.note-title {
+#note-title {
 	display: block;
 	font-size: 18px;
-	font-weight: bold;
-	color: #333;
+	font-weight: bolder;
+	color: #000000;
 	text-decoration: none;
 	margin-bottom: 10px;
 }
 
-.note-info {
+.notes-info {
 	display: block;
-	font-size: 14px;
-	color: #666;
-	margin-bottom: 5px;
+	font-size: 12px;
+	margin: 5px;
 }
 
 .note-created {

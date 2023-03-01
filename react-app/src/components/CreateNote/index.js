@@ -20,7 +20,7 @@ const CreateNoteButton = () => {
 		setIsLoading(false);
 		history.push(`/notes/${newNote.id}`);
 	};
-
+	
 	return (
 		<form onSubmit={handleSubmit}>
 			<button type="submit" disabled={isLoading}>
@@ -31,5 +31,3 @@ const CreateNoteButton = () => {
 };
 
 export default CreateNoteButton;
-
-//is there a way I can delay the loading for when I create it, so it wont break on render?

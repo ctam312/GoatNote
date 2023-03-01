@@ -41,12 +41,11 @@ function CreateNotebookModal() {
 			<div className="close-modal">
 				<span style={{cursor:"pointer"}} onClick={closeModal}>
 					<i className = "fa-solid fa-xmark" />
-					X
 				</span>
 			</div>
 
 			<div className="add-spot-header">
-				<h1>Create a plant</h1>
+				<h1>Create a Notebook</h1>
 			</div>
 
 			<div className="add-spot-errors">
