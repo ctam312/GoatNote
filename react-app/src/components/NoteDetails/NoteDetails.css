@@ -1,10 +1,38 @@
-.full-container {
+.note-details-container {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	align-items: left;
+	background-color: #858585;
+	width: 100vw;
+	height: 100vh;
+}
+
+.note-details-inner-container{
+	margin-left: 10px;
+	margin-top: 30px;
 }
 
 .note-part {
-	margin: 10px;
+	margin-bottom: 10px;
+}
+
+.note-part>textarea{
+	font-family: Montserrat, sans-serif;
+	width: 80vw;
+	height: 50vh;
+	font-size: 12pt;
+	resize: none;
+	border-radius: 10px;
+}
+
+.notebook-selector{
+	font-family: Montserrat, sans-serif;
+	border-radius: 10px;
+}
+
+.note-detail-title{
+	font-size: 25pt;
+	background-color: #858585;
+	border: 10px;
+	font-family: Montserrat, sans-serif;
 }

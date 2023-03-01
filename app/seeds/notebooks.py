@@ -6,19 +6,19 @@ from datetime import datetime
 def seed_notebooks():
     notebook1 = Notebook(
     user_id=1,
-    title='Demo My First Notebook',
+    title='Goats I like',
     created_at=datetime.utcnow(),
     updated_at=datetime.utcnow()
     )
     notebook2 = Notebook(
     user_id=1,
-    title='Demo My Second Notebook',
+    title='Goats I hate',
     created_at=datetime.utcnow(),
     updated_at=datetime.utcnow()
     )
     notebook3 = Notebook(
-    user_id=2,
-    title='User 2 My Third Notebook',
+    user_id=1,
+    title='IRL G.O.A.Ts',
     created_at=datetime.utcnow(),
     updated_at=datetime.utcnow()
     )

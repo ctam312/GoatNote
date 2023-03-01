@@ -59,42 +59,51 @@ function NoteDetails() {
 	};
 
 	return (
-		<div className="full-container">
-			Title:
-			<div className="note-part">
-				<input
-					value={title}
-					onChange={handleTitleChange}
-					placeholder="New Note"
-					maxLength="20"
-					minLength="1"
-					required
-				/>
+		<div className="note-details-container">
+			<div className="note-details-inner-container">
+				<div className="note-part">
+					<input 
+						value={title}
+						className = "note-detail-title"
+						onChange={handleTitleChange}
+						placeholder="New Note"
+						onBlur={(e) => {
+							if (e.target.value.length >= 15) {
+								alert("Title should be no more than 15 characters");
+							}
+						}}
+						maxLength="15"
+						minLength="1"
+						required
+					/>
+				</div>
+				<h3>
+					Add to Notebook:{" "}
+					<select className="notebook-selector" value={notebook_id} onChange={handleNotebookChange}>
+						<option value={0}>No Notebook</option>
+						{Object.values(notebooks).map((notebook) => (
+							<option key={notebook.id} value={notebook.id}>
+								{notebook.title}
+							</option>
+						))}
+					</select>
+				</h3>
+
+				<div className="note-part">
+					<textarea
+						value={content}
+						onChange={handleContentChange}
+						placeholder="Click to Type"
+					/>
+				</div>
+				<div className="modal-button">
+					<OpenModalButton
+						className="delete-spot"
+						modalComponent={<DeletePlantModal />}
+						buttonText="Delete Note"
+					/>
+				</div>
 			</div>
-			Content:
-			<div className="note-part">
-				<textarea
-					value={content}
-					onChange={handleContentChange}
-					placeholder="Click to Type"
-				/>
-			</div>
-			Add to Notebook:
-			<div className="note-part">
-				<select value={notebook_id} onChange={handleNotebookChange}>
-					<option value={0}>No Notebook</option>
-					{Object.values(notebooks).map((notebook) => (
-						<option key={notebook.id} value={notebook.id}>
-							{notebook.title}
-						</option>
-					))}
-				</select>
-			</div>
-			<OpenModalButton
-				className="delete-spot"
-				modalComponent={<DeletePlantModal />}
-				buttonText="Delete Note"
-			/>
 		</div>
 	);
 }

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useModal } from "../../context/Modal";
 import { deleteNotebookThunk } from "../../store/notebook";
+import "./NotebookDetails.css";
 
 const DeleteNotebookModal = () => {
 	const dispatch = useDispatch();
@@ -35,10 +36,18 @@ const DeleteNotebookModal = () => {
 
 			<div className="delete-pop-up">
 				<h2>Delete this notebook?</h2>
-				<p>(This is permanent and cannot be undone. All notes within the notebook will be deleted as well.)</p>
+				<p>
+					(This is permanent and cannot be undone. All notes within the notebook
+					will be deleted as well.)
+				</p>
 				<form onSubmit={handleSubmit}>
-					<button type="submit">Confirm Delete</button>
-                    {/* check plantsy button design */}
+					<button type="submit" class="cta">
+						<span className="confirm">Confirm Delete</span>
+						<svg viewBox="0 0 13 10" height="10px" width="15px">
+							<path d="M1,5 L11,5"></path>
+							<polyline points="8 1 12 5 8 9"></polyline>
+						</svg>
+					</button>
 				</form>
 			</div>
 		</div>
