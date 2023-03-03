@@ -6,7 +6,7 @@ from datetime import datetime
 def seed_notes():
     note3 = Note(
     user_id=2,
-    notebook_id=3,
+    notebook_id=4,
     title='User 2 Third Note',
     content='This is my third note.',
     created_at=datetime.utcnow(),

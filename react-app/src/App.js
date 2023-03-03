@@ -10,6 +10,7 @@ import NoteList from "./components/NoteList";
 import NoteDetails from "./components/NoteDetails";
 import NotebookList from "./components/NotebookList";
 import NotebookDetails from "./components/NotebookDetails";
+import ErrorGoat from "./components/ErrorPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -42,6 +43,9 @@ function App() {
           <Route exact path="/notes/:noteId" component={NoteDetails} />
           <Route exact path="/notebooks/" component={NotebookList} />
           <Route exact path="/notebooks/:notebookId" component={NotebookDetails} />
+          <Route>
+            <ErrorGoat/>
+          </Route>
           <Redirect to="/" />
         </Switch>
       )}
