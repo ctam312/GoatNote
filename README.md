@@ -53,7 +53,7 @@ Introducing Goatnote, a full-stack Evernote clone, your go-to online note taking
 
 ### Feel free to view images below on all the features that were implemented on this project! These all follow the four basic CRUD functions.
 
-## Home Page Demo User/Log in:
+##Demo User/Log in:
 
 To test all features please click on the "Login as Demo User" button or feel free to sign up!
 
