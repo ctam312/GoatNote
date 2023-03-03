@@ -81,7 +81,7 @@ You can organize your notes within notebooks you create with the selector option
 
 <img width="1199" alt="Screenshot 2023-03-03 at 10 20 31 AM" src="https://user-images.githubusercontent.com/90665180/222758227-c2809b59-72ee-48a9-94a2-27d1d391b389.png">
 
-## Bonus Feature (404 page):
-![404page](https://user-images.githubusercontent.com/90665180/222761227-6e014923-186c-4718-9405-a197901895c2.gif)!
+## Bonus Feature: Lost Goat! (404 page):
+![404page](https://user-images.githubusercontent.com/90665180/222761227-6e014923-186c-4718-9405-a197901895c2.gif)
 
 
