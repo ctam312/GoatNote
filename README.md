@@ -2,7 +2,7 @@
 <img width="1248" alt="Screenshot 2023-03-03 at 10 11 16 AM" src="https://user-images.githubusercontent.com/90665180/222756003-c7e9e8ec-3ae5-48fe-9beb-8e459566465d.png">
 
 
-Introducing Plantsy, a full-stack Evernote clone, your go-to online note taking app that auto saves and organizes your notes from mountain goats to goats like Michael Jordan. View and organize all of your notes in one place. Welcome to Goatnote, let's take note! [Click here to view Goatnote Live Site](https://goatnote.onrender.com/)
+Introducing Goatnote, a full-stack Evernote clone, your go-to online note taking app that auto saves and organizes your notes from mountain goats to goats like Michael Jordan. View and organize all of your notes in one place. Welcome to Goatnote, let's take note! [Click here to view Goatnote Live Site](https://goatnote.onrender.com/)
 
 ### Please see below links to project Wiki:
 * [Feature List](https://github.com/ctam312/GoatNote/wiki/Feature-List)
