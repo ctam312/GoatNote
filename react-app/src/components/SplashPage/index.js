@@ -70,12 +70,14 @@ export default function SplashLanding() {
 					<a
 						className="social"
 						href="https://www.linkedin.com/in/ctam312/"
+						target='_blank'
 					>
 						<i className="fa-brands fa-linkedin fa-xl" />
 					</a>
 					<a
 						className="social"
 						href="https://github.com/ctam312"
+						target='_blank'
 					>
 						<i class="fa-brands fa-github"></i>
 					</a>
