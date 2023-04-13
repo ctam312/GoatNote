@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { getAllNotesThunk } from "../../store/note";
 import "./NoteList.css";
+import ScratchPad from "../ScratchPad";
 
 const NoteList = () => {
 	const dispatch = useDispatch();
@@ -27,9 +28,9 @@ const NoteList = () => {
 							{Object.values(allNotes).length ? (
 								Object.values(allNotes).map((note) => (
 									<div
-										className="note-detail-container"
-										key={note.id}
-										onClick={() => history.push(`/notes/${note.id}`)}
+									className="note-detail-container"
+									key={note.id}
+									onClick={() => history.push(`/notes/${note.id}`)}
 									>
 										<div className="notes-info" id="note-title">
 											{note.title}
@@ -55,6 +56,9 @@ const NoteList = () => {
 						</div>
 					</div>
 				</div>
+									<div>
+										<ScratchPad/>
+									</div>
 			</div>
 		</div>
 	);
