@@ -10,6 +10,7 @@ from .api.auth_routes import auth_routes
 from .api.notes_routes import note_routes
 from .api.notebooks_routes import notebook_routes
 from .api.scratchpad_route import scratchpad_routes
+from .api.tasks_routes import tasks_routes
 from .seeds import seed_commands
 from .config import Config
 
@@ -34,6 +35,7 @@ app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(note_routes, url_prefix='/api/notes')
 app.register_blueprint(notebook_routes, url_prefix='/api/notebooks')
 app.register_blueprint(scratchpad_routes, url_prefix='/api/scratchpad')
+app.register_blueprint(tasks_routes, url_prefix='/api/tasks')
 db.init_app(app)
 Migrate(app, db)
 
