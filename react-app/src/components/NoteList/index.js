@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import { getAllNotesThunk } from "../../store/note";
 import "./NoteList.css";
 import ScratchPad from "../ScratchPad";
+import NoteTask from "../TaskList";
 
 const NoteList = () => {
 	const dispatch = useDispatch();
@@ -58,6 +59,9 @@ const NoteList = () => {
 				</div>
 									<div>
 										<ScratchPad/>
+									</div>
+									<div>
+										<NoteTask/>
 									</div>
 			</div>
 		</div>

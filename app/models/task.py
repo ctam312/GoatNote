@@ -27,5 +27,5 @@ class Task(db.Model):
             'due_date': self.due_date.isoformat(),
             'completed': self.completed,
             'created_at': self.created_at.isoformat(),
-            'updated_at': self.updated_at.isoformat(),
+            # 'updated_at': self.updated_at.isoformat(),
         }

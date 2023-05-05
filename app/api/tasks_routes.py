@@ -33,6 +33,7 @@ def get_task(taskId):
 @login_required
 def create_task():
     form = TaskForm()
+    print("we in dis fr!!<-------@!!@")
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         task = Task(
@@ -40,7 +41,7 @@ def create_task():
             title=form.title.data,
             description=form.description.data,
             due_date=form.due_date.data,
-            completed=form.completed.data
+            # completed=form.completed.data
         )
         db.session.add(task)
         db.session.commit()
