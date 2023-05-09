@@ -1,25 +1,29 @@
 .peer-review-div{
-    background-color: #c6c6c6;
+    background-color: #858585;
     height: 100vh;
     width: 100vw;
 }
 
-.notes-component{
+/* .notes-component{
     padding-left: 20px;
     width: 88vw;
     height: 100vh;
     background-color: #858585;
-    overflow-y: scroll
+    overflow-y: scroll;
+} */
+
+.check-compo{
+	display: flex;
 }
 
-.allnotes-container {
+/* .allnotes-container {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	gap: 8px;
 	margin-top: 20px;
-    max-width: 100%;
+    max-width: 60%;
     overflow-y: scroll;
-}
+} */
 
 .note-detail-container {
 	border: 1px solid #ccc;
@@ -62,7 +66,7 @@
 
 .notes-list-container{
 	background-color: rgb(214, 214, 214);
-	width: 75vw;
+	width: 60vw;
 	height: 80vh;
 	border-radius: 10px;
 	overflow-y: scroll;

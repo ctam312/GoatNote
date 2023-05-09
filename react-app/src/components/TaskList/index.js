@@ -32,50 +32,41 @@ const NoteTask = () => {
 	}, [dispatch]);
 
 	return (
-		<div className="peer-review-div">
-			<div className="notes-component">
-				<div className="notes-list-container">
-					<div className="notes-list-inner-cont">
-						<h2>📝 Tasks:</h2>
-						<OpenModalButton
-							className="create-plant-button"
-							modalComponent={<CreateTaskModal />}
-							buttonText="Create New Task"
-						/>
-						<div className="allTasks-container">
-							{Object.values(allTasks).length ? (
-								Object.values(allTasks).map((task) => (
-									<div className="note-detail-container" key={task.id}>
-										<div className="notes-info" id="note-title">
-											{task.title}
-										</div>
-                                        <div className="notes-info" id="note-desc">
-											{task.description}
-										</div>
-										<div className="notes-info">
-											Due on: {new Date(task.due_date).toLocaleDateString()}
-										</div>
-										<div>
-											<form
-												onSubmit={(e) => handleSubmit(e, task.id)}
-												key={task.id}
-											>
-												<button type="submit">
-													<span className="confirm">Completed</span>
-												</button>
-											</form>
-										</div>
-									</div>
-								))
-							) : (
-								<h3 className="no-notes-message">
-									You have no tasks. Click "on the +" on the top right to make
-									some tasks!
-								</h3>
-							)}
+		<div className="whole-task-div">
+			<h2>📝 Tasks:</h2>
+			<OpenModalButton
+				className="create-task-button"
+				modalComponent={<CreateTaskModal />}
+				buttonText="Create New Task"
+			/>
+			<div className="allTasks-container">
+				{Object.values(allTasks).length ? (
+					Object.values(allTasks).map((task) => (
+						<div className="task-detail-container" key={task.id}>
+							<div className="task-info" id="task-title">
+								{task.title}
+							</div>
+							<div className="task-info" id="task-desc">
+								{task.description}
+							</div>
+							<div className="task-info">
+								Due on: {new Date(task.due_date).toLocaleDateString()}
+							</div>
+							<div>
+								<form onSubmit={(e) => handleSubmit(e, task.id)} key={task.id}>
+									<button type="submit">
+										<span className="confirm">Completed</span>
+									</button>
+								</form>
+							</div>
 						</div>
-					</div>
-				</div>
+					))
+				) : (
+					<h3 className="no-notes-message">
+						You have no tasks. Click "on the +" on the top right to make some
+						tasks!
+					</h3>
+				)}
 			</div>
 		</div>
 	);
