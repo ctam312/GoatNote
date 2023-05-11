@@ -35,7 +35,6 @@ export default function ScratchPad() {
 	return (
 		<div className="scratch-main-container">
 			<div className="scratch-title-container">
-				<h1>ScratchPad</h1>
 				<div className="scratch-actions">
 					<button className="evernote-btn" onClick={handleSave}>
 						save

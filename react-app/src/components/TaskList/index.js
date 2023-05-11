@@ -11,7 +11,6 @@ const NoteTask = () => {
 	const dispatch = useDispatch();
 	const allTasks = useSelector((state) => state.tasks.allTasks);
 	const task = useSelector((state) => state.tasks.singleTask);
-	console.log("THIS IS THE TASK FR", task);
 	const history = useHistory();
 	const [errors, setErrors] = useState([]);
 
@@ -54,7 +53,7 @@ const NoteTask = () => {
 							</div>
 							<div>
 								<form onSubmit={(e) => handleSubmit(e, task.id)} key={task.id}>
-									<button type="submit">
+									<button type="submit" className="wiggle-button">
 										<span className="confirm">Completed</span>
 									</button>
 								</form>

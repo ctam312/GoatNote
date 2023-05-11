@@ -13,7 +13,6 @@ const NoteList = () => {
 	const user = useSelector((state) => state.session.user);
 	const history = useHistory();
 
-
 	useEffect(() => {
 		dispatch(getAllNotesThunk());
 	}, [dispatch]);
@@ -24,8 +23,6 @@ const NoteList = () => {
 				<h1 className="welcome-header-top">Welcome back, {user?.username}!</h1>
 				<div className="all-components">
 					<div className="check-compo">
-						<ScratchPad />
-						<NoteTask />
 						<div className="testing">
 							<div className="notes-list-inner-cont">
 								<h2>📝 Notes:</h2>
@@ -59,6 +56,15 @@ const NoteList = () => {
 										</h3>
 									)}
 								</div>
+							</div>
+						</div>
+						<div className="sidestack">
+							<div className="scratchDiv">
+							<h2>📝 ScratchPad:</h2>
+							<ScratchPad />
+							</div>
+							<div className="taskDiv">
+								<NoteTask />
 							</div>
 						</div>
 					</div>
