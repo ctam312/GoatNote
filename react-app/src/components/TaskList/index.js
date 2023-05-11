@@ -33,11 +33,13 @@ const NoteTask = () => {
 	return (
 		<div className="whole-task-div">
 			<h2>📝 Tasks:</h2>
-			<OpenModalButton
-				className="create-task-button"
-				modalComponent={<CreateTaskModal />}
-				buttonText="Create New Task"
-			/>
+			<div className="modal-button">
+				<OpenModalButton
+					className="create-plant-button"
+					modalComponent={<CreateTaskModal />}
+					buttonText="Add Task"
+				/>
+			</div>
 			<div className="allTasks-container">
 				{Object.values(allTasks).length ? (
 					Object.values(allTasks).map((task) => (
@@ -51,7 +53,7 @@ const NoteTask = () => {
 							<div className="task-info">
 								Due on: {new Date(task.due_date).toLocaleDateString()}
 							</div>
-							<div>
+							<div id="complete-btn">
 								<form onSubmit={(e) => handleSubmit(e, task.id)} key={task.id}>
 									<button type="submit" className="wiggle-button">
 										<span className="confirm">Completed</span>
@@ -62,7 +64,7 @@ const NoteTask = () => {
 					))
 				) : (
 					<h3 className="no-notes-message">
-						You have no tasks. Click "on the +" on the top right to make some
+						You have no tasks. Click "ADD TASK" on the top left to make some
 						tasks!
 					</h3>
 				)}

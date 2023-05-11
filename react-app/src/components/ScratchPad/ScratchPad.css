@@ -4,6 +4,8 @@
     border-radius: 10px;
 }
 
-.scratch-main-container{
-
+.scratch-actions > button{
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-right: 5px;
 }

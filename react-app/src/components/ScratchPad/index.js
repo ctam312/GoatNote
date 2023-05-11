@@ -36,10 +36,10 @@ export default function ScratchPad() {
 		<div className="scratch-main-container">
 			<div className="scratch-title-container">
 				<div className="scratch-actions">
-					<button className="evernote-btn" onClick={handleSave}>
+					<button className="wiggle-button" onClick={handleSave}>
 						save
 					</button>
-					<button className="evernote-btn" onClick={handleClear}>
+					<button className="wiggle-button" onClick={handleClear}>
 						clear
 					</button>
 				</div>

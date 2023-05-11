@@ -78,7 +78,7 @@ function CreateTaskModal() {
 									value={description}
 									onChange={(e) => setDescription(e.target.value)}
 									required
-									placeholder="Enter Description Here"
+									placeholder="Enter Details Here"
 									onBlur={(e) => {
 										if (e.target.value.length > 20) {
 											alert("Title should be no more than 20 characters");
@@ -95,8 +95,8 @@ function CreateTaskModal() {
 							</label>
 						</div>
 
-						<div className="submitBtn">
-							<button type="submit" class="ctam">
+						<div className="submitBtn" id="test-btn">
+							<button type="submit" className="ctam">
 								<span>Create</span>
 								<svg viewBox="0 0 13 10" height="10px" width="15px">
 									<path d="M1,5 L11,5"></path>
