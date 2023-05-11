@@ -46,7 +46,7 @@ export default function SplashLanding() {
 					<div className="splashpage-item">
 						<div className="title">REMEMBER EVERYTHING</div>
 						<div className="desc">
-							Make notes more useful by being organized into notebooks.
+							Make notes more useful by being organized into notebooks and have quick access to a scratchpad.
 						</div>
 					</div>
 					<div className="splashpage-item">

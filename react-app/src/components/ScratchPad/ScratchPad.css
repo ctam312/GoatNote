@@ -1,0 +1,11 @@
+#scratchpad{
+    resize: none;
+    height: 250px;
+    border-radius: 10px;
+}
+
+.scratch-actions > button{
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}

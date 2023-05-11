@@ -1,24 +1,66 @@
 .peer-review-div{
-    background-color: #c6c6c6;
-    height: 100vh;
-    width: 100vw;
+    background-color: #858585;
+    height: 90%;
+    width: 90%;
+	overflow-y: hidden;
+}
+
+.all-components{
+	height:100%
+}
+
+.scatchDiv{
+	height: 250px;
 }
 
 .notes-component{
     padding-left: 20px;
-    width: 88vw;
+    width: 80vw;
     height: 100vh;
     background-color: #858585;
-    overflow-y: scroll
+	overflow-y: hidden;
+}
+
+.check-compo{
+	display: flex;
+	height: 100%;
+}
+
+.sidestack{
+	width: 300px;
+	margin-left: 25px;
+	margin-right: 25px;
+	height: 88%;
+	background-color: #1b1b1b59;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
+.testing{
+	/* overflow-y:scroll;
+	width: 770wv;
+	max-height: max-content; */
+	border-radius: 10px;
+	height: 88%;
+	overflow-x: hidden;
+	background-color: #1b1b1b59;
+	width:100%;
+}
+
+.taskDiv{
+	/* background-color: #1b1b1b59;
+	border-radius: 10px;
+	margin-bottom: 10px; */
+	padding: 10px;
 }
 
 .allnotes-container {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	gap: 8px;
-	margin-top: 20px;
-    max-width: 100%;
-    overflow-y: scroll;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	height: 90%;
+	overflow-y: scroll;
 }
 
 .note-detail-container {
@@ -26,10 +68,10 @@
     color: black;
 	border-radius: 20px;
 	padding: 10px;
+	margin: 10px;
 	background-color: #419f4c;
     width: 220px;
-    height: 100px; /* Add a fixed height to prevent content from wrapping */
-    overflow: hidden; /* Hide any overflowing content */
+    height: 120px;
 	cursor: pointer;
 }
 
@@ -62,12 +104,15 @@
 
 .notes-list-container{
 	background-color: rgb(214, 214, 214);
-	width: 75vw;
-	height: 80vh;
+	width: 100%;
+	height: 100%;
 	border-radius: 10px;
-	overflow-y: scroll;
+	/* overflow-y: scroll; */
 }
 
 .notes-list-inner-cont{
 	margin-left: 10px;
+	height: 100%;
+	width: 100%;
+	overflow-y: hidden;
 }

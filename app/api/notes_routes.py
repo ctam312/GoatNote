@@ -18,7 +18,6 @@ def validation_errors_to_error_messages(validation_errors):
 @note_routes.route('/')
 @login_required
 def get_all_notes():
-    print("this is current user ---->" + str(current_user.id))
     notes = Note.query.filter(Note.user_id == current_user.id).all()
     return {"notes": [note.to_dict() for note in notes]}
 

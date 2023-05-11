@@ -1,0 +1,29 @@
+.allTasks-container{
+    overflow-y: scroll;
+    max-height: 30vh;
+}
+
+.task-detail-container{
+    background-color: rgb(173, 255, 177);
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.task-info{
+    margin: 5px;
+}
+
+#task-title{
+    font-size: larger;
+    font-weight: 900;
+}
+
+#task-desc{
+    font-style: italic;
+    font-size: small;
+}
+
+#complete-btn{
+    margin-left: 125px;
+    margin-bottom: 10px;
+}
